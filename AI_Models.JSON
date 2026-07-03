@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "_schema_version": "1.0",
+    "_schema_version": "1.1",
     "_generated": "2026-07-03",
     "_description": "Hyper-current AI model landscape reference (July 2026). Covers API-accessible, locally-runnable (Ollama/LM Studio), and open-weight models. Cost tiers based on input token pricing per 1M tokens.",
     "_cost_tier_legend": {
@@ -28,7 +28,9 @@
       "https://www.together.ai/pricing",
       "https://fireworks.ai/pricing"
     ],
-    "_model_count": 143
+    "_model_count": 143,
+    "_new_fields_v1.1": ["modalities", "installed_local"],
+    "_installed_local_note": "installed_local:true = present on Lebet workstation Ollama as of 2026-07-03"
   },
   "models": [
     {"name": "GPT-5.5", "provider": "OpenAI", "access": ["API"], "first_available": "2026-06", "cost_tier": "$$$$", "cost_note": "$5.00/$30.00 per 1M in/out tokens", "local": false, "open_weight": false, "context_window_k": 1000},
@@ -174,5 +176,20 @@
     {"name": "nomic-embed-text", "provider": "Nomic AI", "access": ["Ollama", "OpenRouter", "API"], "first_available": "2024-02", "cost_tier": "F", "cost_note": "Free locally; ~$0.02/1M via hosted API", "local": true, "open_weight": true, "context_window_k": 8},
     {"name": "mxbai-embed-large", "provider": "MixedBread AI", "access": ["Ollama", "HuggingFace"], "first_available": "2024-03", "cost_tier": "F", "cost_note": "Free open weights", "local": true, "open_weight": true, "context_window_k": 512},
     {"name": "all-minilm", "provider": "Microsoft (SBERT)", "access": ["Ollama", "HuggingFace"], "first_available": "2020-08", "cost_tier": "F", "cost_note": "Free open weights; Apache 2.0", "local": true, "open_weight": true, "context_window_k": 1}
+
+  ,"installed_local_ollama": [
+    {"tag": "llama3.1:70b", "id": "711a9e8463af", "size_gb": 42, "modalities": ["text"], "maps_to": "Llama 3.1 70B Instruct"},
+    {"tag": "mistral-nemo:latest", "id": "e7e06d107c6c", "size_gb": 7.1, "modalities": ["text"], "maps_to": "Mistral NeMo 12B"},
+    {"tag": "gemma4-max:latest", "id": "e1f8ba4ee97f", "size_gb": 7.2, "modalities": ["text","vision"], "maps_to": "Gemma 4 (custom tag)"},
+    {"tag": "gemma4-extended:latest", "id": "ade5ac4713ab", "size_gb": 7.2, "modalities": ["text","vision"], "maps_to": "Gemma 4 (custom tag)"},
+    {"tag": "nomic-embed-text:latest", "id": "0a109f422b47", "size_gb": 0.274, "modalities": ["embedding"], "maps_to": "Nomic Embed Text"},
+    {"tag": "qwen3-coder:30b", "id": "06c1097efce0", "size_gb": 18, "modalities": ["text","code"], "maps_to": "Qwen3 Coder"},
+    {"tag": "embeddinggemma:latest", "id": "85462619ee72", "size_gb": 0.621, "modalities": ["embedding"], "maps_to": "EmbeddingGemma"},
+    {"tag": "gpt-oss:20b", "id": "17052f91a42e", "size_gb": 13, "modalities": ["text"], "maps_to": "GPT-OSS-20B"},
+    {"tag": "gemma4:26b", "id": "5571076f3d70", "size_gb": 17, "modalities": ["text","vision"], "maps_to": "Gemma 4 26B MoE", "vision_recommended": true},
+    {"tag": "gemma4:12b-it-qat", "id": "38044be4f923", "size_gb": 7.2, "modalities": ["text","vision"], "maps_to": "Gemma 4 12B (QAT)"},
+    {"tag": "huihui_ai/gemma-4-abliterated:latest", "id": "67405a76bb3a", "size_gb": 9.6, "modalities": ["text","vision"], "maps_to": "Gemma 4 (abliterated)"}
+  ]
+
   ]
 }
